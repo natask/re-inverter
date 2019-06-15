@@ -1,0 +1,26 @@
+{
+	"manifest_version": 2,
+	"name": "re_inverter",
+	"version": "3",
+	"description": "re_inverters all baby.",
+	"applications": {
+		"gecko": {
+		"id": "re_inverter@works.com"
+	  }
+	},
+	"icons": {
+		"48": "icons/border-48.png"
+	},
+	"background": {
+		"scripts": ["settings.js"]
+	},
+	"permissions": ["storage"],
+	"content_scripts": [{
+			"matches": ["*://*/*"],
+            "match_about_blank": true,
+            //"all_frames": true,
+			"js": ["re_inverter.js"],
+			"run_at": "document_start"
+		}
+	]
+}
